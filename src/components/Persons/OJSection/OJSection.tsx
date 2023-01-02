@@ -80,7 +80,7 @@ const ARSection: React.FC = () => {
               <img
                 src={olga_j_big}
                 className={classes.image}
-                alt="aleksandra_borowa_psychoterapia"
+                alt="olga_jendrzejewicz_psychoterapia"
               />
             </Box>
           </MediaQuery>
@@ -92,7 +92,7 @@ const ARSection: React.FC = () => {
               <img
                 src={olga_j_small}
                 className={classes.circleImage}
-                alt="aleksandra_borowa_psychoterapia"
+                alt="olga_jendrzejewicz_psychoterapia"
               />
             </Box>
           </MediaQuery>
@@ -107,7 +107,7 @@ const ARSection: React.FC = () => {
             }}
           >
             <Box className={classes.descriptionArea}>
-              <h1 className={classes.title}>Adriana Weremij</h1>
+              <h1 className={classes.title}>Olga Jędrzejewicz</h1>
               <ColorBlock />
               <Text className={classes.firstText}>
                 Jestem psycholożką i psychoterapeutką poznawczo-behawioralną w

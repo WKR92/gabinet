@@ -80,7 +80,7 @@ const ARSection: React.FC = () => {
               <img
                 src={ada_w_big}
                 className={classes.image}
-                alt="aleksandra_borowa_psychoterapia"
+                alt="adrianna_weremij_psychoterapia"
               />
             </Box>
           </MediaQuery>
@@ -92,7 +92,7 @@ const ARSection: React.FC = () => {
               <img
                 src={ada_w_small}
                 className={classes.circleImage}
-                alt="aleksandra_borowa_psychoterapia"
+                alt="adrianna_weremij_psychoterapia"
               />
             </Box>
           </MediaQuery>
