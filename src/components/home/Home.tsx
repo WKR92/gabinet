@@ -1,28 +1,20 @@
-import {
-  BackgroundImage,
-  Box,
-  Group,
-  Header,
-  Image,
-  MediaQuery,
-  Text,
-  createStyles,
-} from "@mantine/core";
+import { Box, createStyles } from "@mantine/core";
 
 import About from "../about/About";
 import { Link } from "react-scroll";
 import Portrait from "../portait/Portrait";
 import Slider from "../slider/Slider";
 import Welcome from "../welcome/Welcome";
-import annaImg from "../../assets/Anna.jpg";
-import homeImg from "../../assets/homeImg.png";
-import sofaImg from "../../assets/sofa.jpg";
+import adaImg from "../../assets/ada_big.jpg";
+import annaImg from "../../assets/ania_big.jpg";
+import olaImg from "../../assets/ola_big.jpg";
+import olgaImg from "../../assets/olga_big.jpg";
 
 const useStyles = createStyles(() => ({
   homeContainer: {
     display: "flex",
     flexDirection: "column",
-  }
+  },
 }));
 
 const Home: React.FC = () => {
@@ -33,10 +25,26 @@ const Home: React.FC = () => {
       <Welcome />
       <About />
       <Slider>
-        <Portrait name="Anna Ruszkiewicz" img={annaImg} />
-        <Portrait name="Aleksandra Borowa" img={homeImg} />
-        <Portrait name="Sanczo Pansa" img={sofaImg} />
-        <Portrait name="Lord Vader" img={homeImg} />
+        <Portrait
+          name="Adriana Weremij"
+          img={adaImg}
+          path="/adrianna_weremij_psychoterapia"
+        />
+        <Portrait
+          name="Olga Jędrzejewicz"
+          img={olgaImg}
+          path="/olga_jendrzejewicz_psychoterapia"
+        />
+        <Portrait
+          name="Anna Ruszkiewicz"
+          img={annaImg}
+          path="/anna_ruszkiewicz_psychoterapia"
+        />
+        <Portrait
+          name="Aleksandra Borowa"
+          img={olaImg}
+          path="/aleksandra_borowa_psychoterapia"
+        />
       </Slider>
     </Box>
   );

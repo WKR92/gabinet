@@ -33,6 +33,9 @@ const useStyles = createStyles(() => ({
   },
   image: {
     margin: "0 4rem",
+  },
+  bold: {
+    fontWeight: "bold",
   }
 }));
 
@@ -48,23 +51,21 @@ const Slider: React.FC = () => {
 
         <Box className={classes.textContainer}>
           <Text>
-            Jesteśmy zespołem terapeutycznym, którego celem jest tworzenie
-            bezpiecznej przestrzeni do odkrywania siebie i przeżywania emocji, a
-            także do zmiany i rozwoju. Pracujemy w nurcie poznawczo -
-            behawioralnym, integrujemy w swojej pracy podejścia z 3 fali (ACT i
-            DBT) oraz Terapię Schematów.
+          Jesteśmy zespołem terapeutycznym, którego celem jest tworzenie bezpiecznej przestrzeni
+          do odkrywania siebie i przeżywania emocji, a także do zmiany i rozwoju. 
+          Pracujemy w nurcie poznawczo - behawioralnym, integrujemy w swojej pracy podejścia
+          z trzeciej fali (ACT i DBT).
           </Text>
           <Text>
-            Dbamy o profesjonalizm usług przygotowując się do zawodu w szkołach
-            posiadających rekomendację Polskiego Towarzystwa Terapii Poznawczej
-            i Behawioralnej Jesteśmy zrzeszone w towarzystwie terapii CBT, które
-            wyznacza wytyczne dotyczące etyki naszej pracy. Pracujemy pod stałą
-            superwizją, czyli nadzorem i wsparciem zaawansowanych i
-            wykwalifikowanych do tego terapeutów. Łączy nas pasja do
-            wykonywanego zawodu, dlatego nieustannie poszerzamy wiedzę na
-            szkoleniach i konferencjach.
+          Dbamy o profesjonalizm usług <span className={classes.bold}>kształcąc się</span> 
+          w szkołach posiadających rekomendację 
+          Polskiego Towarzystwa Terapii Poznawczej i Behawioralnej.  Jesteśmy zrzeszone w 
+          towarzystwie terapii CBT, które wyznacza wytyczne dotyczące etyki naszej pracy. 
+          Pracujemy pod stałą superwizją, czyli nadzorem i wsparciem zaawansowanych i 
+          wykwalifikowanych terapeutów. Łączy nas pasja do wykonywanego zawodu, dlatego 
+          nieustannie poszerzamy wiedzę na szkoleniach i konferencjach. 
           </Text>
-          <Text>Pracujemy stacjonarnie i online.</Text>
+          <Text>Pracujemy stacjonarnie w gabinecie na warszawskim Powiślu oraz online.</Text>
         </Box>
       </Box>
     </Box>

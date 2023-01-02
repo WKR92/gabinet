@@ -1,5 +1,5 @@
 import { BackgroundImage, Box, Text, createStyles } from "@mantine/core";
-
+import { useNavigate } from "react-router-dom";
 import React from "react";
 
 const useStyles = createStyles((theme, _params, getRef) => ({
@@ -35,19 +35,26 @@ const useStyles = createStyles((theme, _params, getRef) => ({
     transition: "all .5s ease",
 		transform: "translateY(100%)",
 		fontSize: "2rem",
+    marginLeft: "1rem",
   },
 }));
 
 interface IPortrait {
   name: string;
   img: string;
+  path: string;
 }
 
-const Portrait: React.FC<IPortrait> = ({ name, img }) => {
+const Portrait: React.FC<IPortrait> = ({ name, img, path }) => {
   const { classes } = useStyles();
+  const navigate = useNavigate();
+
+  const changePath = (path: string) => {
+    navigate(path);
+  }
 
   return (
-    <Box className={classes.mainContainer}>
+    <Box className={classes.mainContainer} onClick={() => changePath(path)}>
       <BackgroundImage className={classes.image} src={img} radius={0}>
         <Text className={classes.text}>{name}</Text>
       </BackgroundImage>

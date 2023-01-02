@@ -1,7 +1,9 @@
 import {
   AppShell,
+  Box,
   Burger,
   Button,
+  Footer,
   Group,
   Header,
   MediaQuery,
@@ -16,6 +18,7 @@ import {
   IconCalendarEvent,
   IconFriends,
   IconMailOpened,
+  IconMapPin,
   IconPhone,
   IconReceipt2,
 } from "@tabler/icons";
@@ -62,6 +65,7 @@ const Shell: React.FC<IProps> = ({ children }) => {
   const navigate = useNavigate();
 
   const changePath = (path: string) => {
+    // if ()
     navigate(path);
     setOpened(false);
   };
@@ -112,7 +116,13 @@ const Shell: React.FC<IProps> = ({ children }) => {
               rightSection={<IconChevronRight size={16} stroke={2} />}
             /> */}
 
-            <Link smooth={true} offset={-50} to="about" duration={500}>
+            <Link
+              spy={true}
+              smooth={true}
+              offset={-50}
+              to="about"
+              duration={500}
+            >
               <Group
                 className={classes.headerGroup}
                 onClick={() => setOpened(false)}
@@ -122,7 +132,13 @@ const Shell: React.FC<IProps> = ({ children }) => {
               </Group>
             </Link>
 
-            <Link smooth={true} to="slider" duration={500}>
+            <Link
+              spy={true}
+              smooth={true}
+              offset={0}
+              to="slider"
+              duration={500}
+            >
               <Group
                 className={classes.headerGroup}
                 onClick={() => setOpened(false)}
@@ -209,7 +225,7 @@ const Shell: React.FC<IProps> = ({ children }) => {
                     className={classes.mail}
                     onClick={() => console.log("mail")}
                   >
-                    bezpiecznaprzestrzeń@gmail.com
+                    terapiadobra@gmail.com
                   </Text>
                 </MediaQuery>
                 <MediaQuery
@@ -233,6 +249,8 @@ const Shell: React.FC<IProps> = ({ children }) => {
                       </MediaQuery>
 
                       <Link
+                        onClick={() => changePath("/")}
+                        spy={true}
                         smooth={true}
                         offset={-50}
                         to="about"
@@ -244,7 +262,13 @@ const Shell: React.FC<IProps> = ({ children }) => {
                         </Group>
                       </Link>
 
-                      <Link smooth={true} to="slider" duration={500}>
+                      <Link
+                        onClick={() => changePath("/")}
+                        spy={true}
+                        smooth={true}
+                        to="slider"
+                        duration={500}
+                      >
                         <Group className={classes.headerGroup}>
                           <IconFriends size={16} stroke={2} />
                           <Text>Zespół</Text>
