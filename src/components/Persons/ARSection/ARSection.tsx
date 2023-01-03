@@ -3,7 +3,7 @@ import { Box, MediaQuery, Text, createStyles } from "@mantine/core";
 import ColorBlock from "../reusable/ColorBlock";
 import InfoPanel from "../reusable/InfoPanel";
 import annaR_big from "../../../assets/ania_big.jpg";
-import anna_small from "../../../assets/ania_circle_2.png";
+import anna_small from "../../../assets/ania_circle_2.jpg";
 
 const useStyles = createStyles(() => ({
   mainContainer: {
@@ -60,7 +60,7 @@ const useStyles = createStyles(() => ({
   circleImage: {
     width: "70%",
     maxHeight: "80%",
-  }
+  },
 }));
 
 const ARSection: React.FC = () => {
@@ -170,7 +170,9 @@ const ARSection: React.FC = () => {
           </MediaQuery>
         </Box>
       </MediaQuery>
-      <InfoPanel phone={123456789} priceFirst={120} priceRegular={150} />
+      <div id="price">
+        <InfoPanel phone={123456789} priceFirst={120} priceRegular={150} />
+      </div>
     </Box>
   );
 };

@@ -3,7 +3,7 @@ import { Box, MediaQuery, Text, createStyles } from "@mantine/core";
 import ColorBlock from "../reusable/ColorBlock";
 import InfoPanel from "../reusable/InfoPanel";
 import olga_j_big from "../../../assets/olga_big.jpg";
-import olga_j_small from "../../../assets/olga_circle_2.png";
+import olga_j_small from "../../../assets/olga_circle_2.jpg";
 
 const useStyles = createStyles(() => ({
   mainContainer: {
@@ -199,7 +199,9 @@ const ARSection: React.FC = () => {
           </MediaQuery>
         </Box>
       </MediaQuery>
-      <InfoPanel phone={123456789} priceFirst={120} priceRegular={150} />
+      <div id="price">
+        <InfoPanel phone={123456789} priceFirst={120} priceRegular={150} />
+      </div>
     </Box>
   );
 };

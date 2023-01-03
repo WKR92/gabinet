@@ -1,7 +1,7 @@
 import { BackgroundImage, Box, createStyles } from "@mantine/core";
 
 import React from "react";
-import homeImg from "../../assets/homeImg.png";
+import homeImg from "../../assets/homeImg.jpg";
 
 const useStyles = createStyles(() => ({
   welcomeContainer: {

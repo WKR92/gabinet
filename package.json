@@ -33,7 +33,6 @@
     "react-dom": "^18.2.0",
     "react-router": "^6.4.3",
     "react-router-dom": "^6.4.3",
-    "react-scroll": "^1.8.8",
     "sass": "^1.56.0",
     "transition-style": "^0.1.3"
   },

@@ -9,6 +9,7 @@ import { MantineProvider } from "@mantine/core";
 import { ModalsProvider } from "@mantine/modals";
 import { NotificationsProvider } from "@mantine/notifications";
 import OJSection from './components/Persons/OJSection/OJSection';
+import ScrollToTop from './services/scrollService'
 import Shell from "./components/shell/Shell";
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
       <ModalsProvider>
         <NotificationsProvider position="top-right" zIndex={2077} limit={5}>
           <Router>
+          <ScrollToTop />
             <Shell id="shell">
               <Routes>
                 <Route path="/" element={<Home />}></Route>

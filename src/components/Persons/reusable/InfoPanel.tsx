@@ -20,6 +20,7 @@ const useStyles = createStyles(() => ({
 }));
 
 interface IInfoPanel {
+  id?: string;
   phone: number;
   priceFirst: number;
   priceRegular: number;
@@ -37,7 +38,7 @@ const InfoPanel: React.FC<IInfoPanel> = ({
       query="(max-width: 500px)"
       styles={{ flexDirection: "column", gap: '1rem' }}
     >
-      <div className={classes.mainContainer}>
+      <div className={`${classes.mainContainer} info-panel-main-container`}>
         <Box className={classes.sectorContainer}>
           <IconPhoneCall size={20} stroke={2} />
           <Text>{phone}</Text>
