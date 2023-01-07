@@ -26,7 +26,7 @@ const Home: React.FC = () => {
       <About />
       <Slider>
         <Portrait
-          name="Adriana Weremij"
+          name="Adrianna Weremij"
           img={adaImg}
           path="/adrianna_weremij_psychoterapia"
         />

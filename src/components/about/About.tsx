@@ -30,7 +30,7 @@ const useStyles = createStyles(() => ({
     display: "flex",
     alignItems: "center",
     flexDirection: "column",
-    gap: "2rem",
+    gap: "1.5rem",
     maxHeight: "90%",
     overflowY: "auto",
     padding: "0 2rem 0 0",
@@ -44,7 +44,6 @@ const useStyles = createStyles(() => ({
     marginTop: "-1.5rem",
     display: "flex",
     justifyContent: "center",
-    
   },
   image2: {
     width: "70%",
@@ -60,7 +59,11 @@ const Slider: React.FC = () => {
   return (
     <MediaQuery
       query="(max-width: 1000px)"
-      styles={{ padding: "4rem 0", minHeight: "fit-content", display: "inline-block" }}
+      styles={{
+        padding: "4rem 0",
+        minHeight: "fit-content",
+        display: "inline-block",
+      }}
     >
       <Box id="about" className={classes.mainContainer}>
         <MediaQuery
@@ -86,6 +89,7 @@ const Slider: React.FC = () => {
               styles={{ padding: "1rem", maxHeight: "fit-content" }}
             >
               <Box className={classes.textContainer}>
+                <h3 className={classes.title}>O nas:</h3>
                 <Text>
                   Jesteśmy zespołem terapeutycznym, którego celem jest tworzenie
                   bezpiecznej przestrzeni do odkrywania siebie i przeżywania
@@ -113,10 +117,7 @@ const Slider: React.FC = () => {
         </MediaQuery>
         <MediaQuery query="(min-width: 999px)" styles={{ display: "none" }}>
           <Box className={classes.image2Container}>
-            <img
-              className={classes.image2}
-              src={handsHorizontalImg}
-            />
+            <img className={classes.image2} src={handsHorizontalImg} />
           </Box>
         </MediaQuery>
       </Box>

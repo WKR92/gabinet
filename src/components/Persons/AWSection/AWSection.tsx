@@ -106,7 +106,10 @@ const ARSection: React.FC = () => {
               overflow: "hidden",
             }}
           >
-            <Box className={classes.descriptionArea}>
+            <Box
+              transition-style="in:wipe:top-right"
+              className={classes.descriptionArea}
+            >
               <h1 className={classes.title}>Adriana Weremij</h1>
               <ColorBlock />
               <Text className={classes.firstText}>
@@ -154,7 +157,12 @@ const ARSection: React.FC = () => {
         </Box>
       </MediaQuery>
       <div id="price">
-        <InfoPanel phone={123456789} priceFirst={120} priceRegular={150} />
+        <InfoPanel
+          name="Adrianna Weremij"
+          phone={123456789}
+          priceFirst={120}
+          priceRegular={150}
+        />
       </div>
     </Box>
   );

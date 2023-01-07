@@ -68,7 +68,12 @@ const Portrait: React.FC<IPortrait> = ({ name, img, path }) => {
         <BackgroundImage className={classes.image} src={img} radius={0}>
           <MediaQuery
             query="(max-width: 1100px) and (min-width: 900px)"
-            styles={{ opacity: "1", transform: "translateY(200%)", marginLeft: "0", padding: "0 3rem" }}
+            styles={{
+              opacity: "1",
+              transform: "translateY(200%)",
+              marginLeft: "0",
+              padding: "0 3rem",
+            }}
           >
             <MediaQuery
               query="(max-width: 900px)"
