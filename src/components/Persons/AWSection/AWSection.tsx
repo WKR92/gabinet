@@ -1,7 +1,7 @@
 import { Box, MediaQuery, Text, createStyles } from "@mantine/core";
 
 import ColorBlock from "../reusable/ColorBlock";
-import InfoPanel from "../reusable/InfoPanel";
+import InfoPanel from "../reusable/infoPanel/InfoPanel";
 import ada_w_big from "../../../assets/ada_big.jpg";
 import ada_w_small from "../../../assets/ada_crircle_2.jpg";
 
@@ -159,9 +159,9 @@ const ARSection: React.FC = () => {
       <div id="price">
         <InfoPanel
           name="Adrianna Weremij"
-          phone={123456789}
-          priceFirst={120}
-          priceRegular={150}
+          phone={509449735}
+          price={180}
+          site='https://twojpsycholog.pl/profil-psychologa/adriana-weremij-522'
         />
       </div>
     </Box>

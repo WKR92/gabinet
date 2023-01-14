@@ -95,6 +95,7 @@ interface FormValues {
   subject: string;
   phone: string;
   email: string;
+  emailRepeat: string;
   text: string;
   therapist: string;
 }
@@ -103,12 +104,13 @@ const EmailForm: React.FC = () => {
   const { classes } = useStyles();
   const therapistContext = useTherapistContext();
   const updateTherapistContext = useUpdateTherapistContext();
-  const form = useForm({
+  const form: UseFormReturnType<FormValues> = useForm({
     initialValues: {
       name: "",
       subject: "",
       phone: "",
       email: "",
+      emailRepeat: '',
       text: "",
       therapist: therapistContext ? therapistContext : "Ogólnie do gabinetu",
     },
@@ -118,6 +120,7 @@ const EmailForm: React.FC = () => {
         value.length < 5 ? "Proszę podać pełne imię i nazwisko" : null,
       subject: (value) => (value.length < 5 ? "Proszę podać temat" : null),
       email: (value) => (/^\S+@\S+$/.test(value) ? null : "Niepoprawny email"),
+      emailRepeat: (value) => (value === form.values.email ? null : 'Niezgodność emaili'),
       phone: (value) =>
         value.length > 0 && value.length !== 9
           ? "Numer musi mieć 9 cyfr"
@@ -125,8 +128,8 @@ const EmailForm: React.FC = () => {
       text: (value) =>
         value.length < 1
           ? "Wiadomość nie może być pusta"
-          : value.length < 10
-          ? "Wiadomość musi być treściwa"
+          : value.length < 50
+          ? "Wiadomość musi być treściwa (przynajmniej 50 znaków)"
           : null,
     },
   });
@@ -189,7 +192,7 @@ const EmailForm: React.FC = () => {
         <MediaQuery query="(max-width: 600px)" styles={{ minWidth: "90vw" }}>
           <form
             noValidate
-            onSubmit={form.onSubmit((values, _event) => {
+            onSubmit={form.onSubmit((values: FormValues) => {
               handleSubmit(values);
             })}
             className={classes.formContainer}
@@ -202,6 +205,9 @@ const EmailForm: React.FC = () => {
             </Input.Wrapper>
             <Input.Wrapper label="Twój email" error={form.errors.email}>
               <Input required {...form.getInputProps("email")} />
+            </Input.Wrapper>
+            <Input.Wrapper label="Powtórz email" error={form.errors.emailRepeat}>
+              <Input required {...form.getInputProps("emailRepeat")} />
             </Input.Wrapper>
             <Input.Wrapper label="Telefon komórkowy" error={form.errors.phone}>
               <Input

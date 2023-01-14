@@ -1,0 +1,104 @@
+.anim1 {
+  position: relative;
+  padding: 9px 18px;
+  transition: all .2s ease;
+  cursor: pointer;
+}
+
+.anim1:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  border-radius: 28px;
+  background: linear-gradient(to right, #FFAB9D, #ff644b);
+  width: 42px;
+  height: 42px;
+  transition: all .3s ease;
+}
+
+.anim1 span {
+  position: relative;
+}
+
+.anim1 svg {
+  position: relative;
+  top: 0;
+  margin-left: 10px;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: black;
+  stroke-width: 1;
+  transform: translateX(-4px);
+  transition: all .3s ease;
+}
+
+.anim1:hover:before {
+  width: 100%;
+  background: linear-gradient(to right, #FFAB9D, #ff644b);
+}
+
+.anim1:hover svg {
+  transform: translateX(0);
+}
+
+.anim1:active {
+  transform: scale(0.96);
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+a .anim2 {
+  position: relative;
+  padding: 9px 18px;
+  transition: all .2s ease;
+  cursor: pointer;
+}
+
+a .anim2:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  border-radius: 28px;
+  background: linear-gradient(to right, #F9D976, #F39F86);
+  width: 42px;
+  height: 42px;
+  transition: all .3s ease;
+}
+
+a .anim2 span {
+  position: relative;
+}
+
+a .anim2 svg {
+  position: relative;
+  top: 0;
+  margin-left: 10px;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: black;
+  stroke-width: 1;
+  transform: translateX(-4px);
+  transition: all .3s ease;
+}
+
+a .anim2:hover:before {
+  width: 100%;
+  background: linear-gradient(to right, #F9D976, #F39F86);
+}
+
+a .anim2:hover svg {
+  transform: translateX(0);
+}
+
+a .anim2:active {
+  transform: scale(0.96);
+}

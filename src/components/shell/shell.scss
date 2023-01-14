@@ -1,0 +1,51 @@
+.cta {
+  position: relative;
+  padding: 9px 18px;
+  transition: all .2s ease;
+  cursor: pointer;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    border-radius: 28px;
+    background: linear-gradient(to right, #1f4037, #99f2c8);
+    width: 42px;
+    height: 42px;
+    transition: all .3s ease;
+  }
+
+  span {
+    position: relative;
+  }
+
+  svg {
+    position: relative;
+    top: 0;
+    margin-left: 10px;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: black;
+    stroke-width: 1;
+    transform: translateX(-4px);
+    transition: all .3s ease;
+  }
+
+  &:hover {
+    &:before {
+      width: 100%;
+      background: linear-gradient(to right, #1f4037, #99f2c8);
+    }
+  
+    svg {
+      transform: translateX(0);
+      }
+  }
+    
+  &:active {
+    transform: scale(.96)
+  }
+}

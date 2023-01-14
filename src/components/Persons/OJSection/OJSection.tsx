@@ -1,7 +1,7 @@
 import { Box, MediaQuery, Text, createStyles } from "@mantine/core";
 
 import ColorBlock from "../reusable/ColorBlock";
-import InfoPanel from "../reusable/InfoPanel";
+import InfoPanel from "../reusable/infoPanel/InfoPanel";
 import olga_j_big from "../../../assets/olga_big.jpg";
 import olga_j_small from "../../../assets/olga_circle_2.jpg";
 
@@ -60,6 +60,10 @@ const useStyles = createStyles(() => ({
   circleImage: {
     width: "70%",
     maxHeight: "80%",
+  },
+  sectionHeader: {
+    fontWeight: "bold",
+    marginBottom: "1rem",
   },
 }));
 
@@ -134,17 +138,17 @@ const ARSection: React.FC = () => {
               <Text>
                 Zależy mi na skuteczności i aktualności wprowadzanych metod,
                 dlatego jako praktyk stale szkolę się oraz korzystam regularnie
-                z superwizji. W relacji terapeutycznej cenię szacunek,
-                akceptację, współpracę, podmiotowość klienta. Możliwość pracy
-                terapeutycznej traktuję jako przywilej towarzyszenia ludziom w
-                tym, co osobiste i trudne i staram się z jak największą
-                ostrożnością podchodzić do każdego klienta, który obdarza mnie
-                zaufaniem. Prywatnie wolne chwile spędzam spacerując bądź
-                delektując się dobrą książką i herbatą, ciesząc się prostymi
-                przyjemnościami. Lubię taniec.
+                z superwizji.
               </Text>
               <Text>
-                Obszary wsparcia
+                W relacji terapeutycznej cenię szacunek, akceptację, współpracę,
+                podmiotowość klienta. Możliwość pracy terapeutycznej traktuję
+                jako przywilej towarzyszenia ludziom w tym, co osobiste i trudne
+                i staram się z jak największą ostrożnością podchodzić do każdego
+                klienta, który obdarza mnie zaufaniem.
+              </Text>
+              <Box>
+                <Text className={classes.bold}>Obszary wsparcia:</Text>
                 <ul>
                   <li>
                     pracuję z osobami które doświadczyły kryzysu lub zmagają się
@@ -181,23 +185,41 @@ const ARSection: React.FC = () => {
                   </li>
                   <li>
                     pracuję z osobami, które chciałyby pogłębić swój rozwój
-                    osobisty
-                  </li>
-                  <li>
-                    wspieram osoby przeżywające żałobę, rozstanie, będące na
-                    przełomie różnych etapów w życiu
+                    osobisty wspieram osoby przeżywające żałobę, rozstanie,
+                    będące na przełomie różnych etapów w życiu
                   </li>
                   <li>
                     pomagam osobom, które przeżywają trudności w relacjach
                   </li>
                 </ul>
-              </Text>
-              <Text>
-                Doświadczenie zdobywałam pracując w Stowarzyszeniu Pomost, oraz
-                na stażach w klinice Psychomedic oraz w Szpitalu Nowowiejskim, w
-                gabinetach ITPB i Psychomedic. Mam również doświadczenie terapii
-                własnej.
-              </Text>
+              </Box>
+              <Box>
+                <Text className={classes.bold}>Doświadczenie:</Text>
+                <ul>
+                  <li>Instytut Terapii Poznawczo-Behawioralnej</li>
+                  <li>Safe Place</li>
+                  <li>Stowarzyszenie Pomost</li>
+                  <li>Szpital Nowowiejski (staż)</li>
+                  <li>Psychomedic (staż)</li>
+                  <li>Klinika SWPS (staż)</li>
+                  <li>Mam również doświadczenie psychoterapii własnej</li>
+                </ul>
+              </Box>
+              <Box>
+                <Text className={classes.sectionHeader}>Wykształcenie:</Text>
+                <ul>
+                  <li>
+                    4-letnia Szkoła Psychoterapii Poznawczo-Behawioralnej
+                    Uniwersytetu SWPS pod kierownictwem dr Agnieszki Popiel i dr
+                    Ewy Pragłowskiej - w trakcie certyfikacji
+                  </li>
+                  <li>
+                    Uniwersytet SWPS - Psychologia - 5-letnie studia
+                    magisterskie
+                  </li>
+                  <li>University of Kent - wymiana międzynarodowa</li>
+                </ul>
+              </Box>
             </Box>
           </MediaQuery>
         </Box>
@@ -205,9 +227,9 @@ const ARSection: React.FC = () => {
       <div id="price">
         <InfoPanel
           name="Olga Jędrzejewicz"
-          phone={123456789}
-          priceFirst={120}
-          priceRegular={150}
+          phone={664600792}
+          price={170}
+          site="https://twojpsycholog.pl/profil-psychologa/olga-jedrzejewicz-2233"
         />
       </div>
     </Box>

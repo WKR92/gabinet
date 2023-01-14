@@ -1,3 +1,5 @@
+import "./shell.scss";
+
 import {
   AppShell,
   Burger,
@@ -18,7 +20,8 @@ import {
   IconReceipt2,
 } from "@tabler/icons";
 import { ReactNode, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+
+import { useNavigate } from "react-router-dom";
 
 const useStyles = createStyles((theme, _params, getRef) => ({
   mainContainer: {
@@ -106,7 +109,7 @@ const useStyles = createStyles((theme, _params, getRef) => ({
         "&:before": {
           left: "0",
           content: "'Napisz do nas'",
-        }
+        },
       },
     },
   },
@@ -326,25 +329,24 @@ const Shell: React.FC<IProps> = ({ children }) => {
             <MediaQuery query="(max-width: 440px)" styles={{ display: "none" }}>
               <Group className={classes.headerMainContainer}>
                 <MediaQuery
-                  query="(max-width: 570px)"
+                  query="(max-width: 625px)"
                   styles={{ display: "none" }}
                 >
-                  <div className={classes.mailUnderline}>
-                    <Text
-                      className={`${classes.mail} ${classes.mailText}`}
-                      onClick={() => changePath("/email")}
-                    >
-                      terapiadobra@gmail.com
-                    </Text>
+                  <div className="cta" onClick={() => changePath("/email")}>
+                    <span>terapiadobra@gmail.com</span>
+                    <svg width="13px" height="10px" viewBox="0 0 13 10">
+                      <path d="M1,5 L11,5"></path>
+                      <polyline points="8 1 12 5 8 9"></polyline>
+                    </svg>
                   </div>
                 </MediaQuery>
                 <MediaQuery
-                  query="(min-width: 570px)"
+                  query="(min-width: 625px)"
                   styles={{ marginLeft: "auto" }}
                 >
                   <Group>
                     <MediaQuery
-                      query="(min-width: 570px)"
+                      query="(min-width: 625px)"
                       styles={{ display: "none" }}
                     >
                       <Group

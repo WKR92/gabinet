@@ -1,8 +1,11 @@
+import "./infoPanel.scss";
+
 import { Box, MediaQuery, Text, createStyles } from "@mantine/core";
 import { IconBusinessplan, IconMailOpened, IconPhoneCall } from "@tabler/icons";
 
+import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import { useUpdateTherapistContext } from "../../context/TheraphistContext";
+import { useUpdateTherapistContext } from "../../../context/TheraphistContext";
 
 const useStyles = createStyles(() => ({
   mainContainer: {
@@ -23,22 +26,20 @@ const useStyles = createStyles(() => ({
   pointer: {
     cursor: "pointer",
   },
+  bold: {
+    fontWeight: "bold",
+  },
 }));
 
 interface IInfoPanel {
   name: string;
   id?: string;
   phone: number;
-  priceFirst: number;
-  priceRegular: number;
+  price: number;
+  site: string;
 }
 
-const InfoPanel: React.FC<IInfoPanel> = ({
-  name,
-  phone,
-  priceFirst,
-  priceRegular,
-}) => {
+const InfoPanel: React.FC<IInfoPanel> = ({ name, phone, price, site }) => {
   const { classes } = useStyles();
   const navigate = useNavigate();
   const updateTherapistContext = useUpdateTherapistContext();
@@ -50,20 +51,20 @@ const InfoPanel: React.FC<IInfoPanel> = ({
   const goToFormForSpecificTherapist = () => {
     updateTherapistContext(name);
     changePath("/email");
-  }
+  };
 
   return (
     <MediaQuery
-      query="(max-width: 500px)"
+      query="(max-width: 835px)"
       styles={{ flexDirection: "column", gap: "1rem" }}
     >
       <div className={`${classes.mainContainer} info-panel-main-container`}>
-        <Box
-          onClick={() => goToFormForSpecificTherapist()}
-          className={`${classes.sectorContainer} ${classes.pointer}`}
-        >
-          <IconMailOpened size={20} stroke={2} />
-          <Text>Klinij i napisz do mnie</Text>
+        <Box className="anim1" onClick={() => goToFormForSpecificTherapist()}>
+          <span>Napisz do mnie</span>
+          <svg width="13px" height="10px" viewBox="0 0 13 10">
+            <path d="M1,5 L11,5"></path>
+            <polyline points="8 1 12 5 8 9"></polyline>
+          </svg>
         </Box>
         <Box className={classes.sectorContainer}>
           <IconPhoneCall size={20} stroke={2} />
@@ -71,12 +72,19 @@ const InfoPanel: React.FC<IInfoPanel> = ({
         </Box>
         <Box className={classes.sectorContainer}>
           <IconBusinessplan size={20} stroke={2} />
-          <Text>Pierwsza wizyta: {priceFirst} zł</Text>
+          <Text>
+            Koszt wizyty: <span className={classes.bold}>{price}</span> zł
+          </Text>
         </Box>
-        <Box className={classes.sectorContainer}>
-          <IconBusinessplan size={20} stroke={2} />
-          <Text>Kolejne wizyty: {priceRegular} zł</Text>
-        </Box>
+        <a href={site} target="_blank">
+          <Box className="anim2">
+            <span>Portal Twój Psycholog</span>
+            <svg width="13px" height="10px" viewBox="0 0 13 10">
+              <path d="M1,5 L11,5"></path>
+              <polyline points="8 1 12 5 8 9"></polyline>
+            </svg>
+          </Box>
+        </a>
       </div>
     </MediaQuery>
   );

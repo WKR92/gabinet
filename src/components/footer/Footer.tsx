@@ -1,5 +1,12 @@
-import { Box, MediaQuery, Modal, Text, createStyles } from "@mantine/core";
-import { IconMailOpened, IconMapPin } from "@tabler/icons";
+import {
+  Box,
+  MediaQuery,
+  Modal,
+  Text,
+  Tooltip,
+  createStyles,
+} from "@mantine/core";
+import { IconMailOpened, IconMapPin, IconUserExclamation } from "@tabler/icons";
 
 import mapImg from "../../assets/addressImg.png";
 import { useNavigate } from "react-router-dom";
@@ -37,13 +44,18 @@ const useStyles = createStyles(() => ({
     display: "flex",
     alignItems: "center",
     gap: "1rem",
-  }
+  },
+  bold: {
+    fontWeight: "bold",
+  },
 }));
 
 const Footer: React.FC = () => {
   const { classes } = useStyles();
   const navigate = useNavigate();
   const [opened, setOpened] = useState(false);
+  const tooltipMsg =
+    "Uwaga! Gabinet znajduje się na ul. Dobrej 22/24 m.1 na Powiślu (blisko Metra Centrum Nauki Kopernik). W Google Maps lepiej wpisać Dobra 22.";
 
   const changePath = (path: string) => {
     navigate(path);
@@ -63,6 +75,7 @@ const Footer: React.FC = () => {
             <Box className={classes.iconContainer}>
               <IconMapPin size={20} stroke={2} className={classes.icon} />
             </Box>
+            <Text className={classes.bold}>Kliknij żeby zobaczyć mapę</Text>
             <Text>Psychoterapia na Dobrej</Text>
             <Text>ul. Dobra 22/24 m.1</Text>
             <Text>00-388 Warszawa</Text>
@@ -91,7 +104,7 @@ const Footer: React.FC = () => {
               <Text>00-388 Warszawa</Text>
             </Box>
           }
-          size='auto'
+          size="auto"
         >
           <img
             src={mapImg}

@@ -95,7 +95,7 @@ const Slider: React.FC = () => {
                   bezpiecznej przestrzeni do odkrywania siebie i przeżywania
                   emocji, a także do zmiany i rozwoju. Pracujemy w nurcie
                   poznawczo - behawioralnym, integrujemy w swojej pracy
-                  podejścia z trzeciej fali (ACT i DBT).
+                  podejścia z trzeciej fali (ACT i DBT) oraz terapię schematu.
                 </Text>
                 <Text>
                   Dbamy o profesjonalizm usług kształcąc się w szkołach

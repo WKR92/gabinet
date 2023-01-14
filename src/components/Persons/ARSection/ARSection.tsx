@@ -1,7 +1,7 @@
 import { Box, MediaQuery, Text, createStyles } from "@mantine/core";
 
 import ColorBlock from "../reusable/ColorBlock";
-import InfoPanel from "../reusable/InfoPanel";
+import InfoPanel from "../reusable/infoPanel/InfoPanel";
 import annaR_big from "../../../assets/ania_big.jpg";
 import anna_small from "../../../assets/ania_circle_2.jpg";
 
@@ -119,8 +119,17 @@ const ARSection: React.FC = () => {
                 </span>{" "}
                 w Szkole Psychoterapii „Crescentia” posiadającej rekomendację
                 Polskiego Towarzystwa Terapii Poznawczej i Behawioralnej.
-                Ukończyłam roczny kurs technik Terapii Schematu w Centrum
+                Ukończyłam roczny cykl szkoleń Terapii Schematu w Centrum
                 Psychoterapii i Poradnictwa „Phanari”.
+              </Text>
+              <Text>
+                Prowadzę psychoterapię indywidualną osób dorosłych m.in. w
+                takich obszarach jak: zaburzenia lękowe, depresja, niska
+                samoocena i poczucie własnej wartości, zaburzenia osobowości,
+                trudności w relacjach interpersonalnych oraz emocjonalnych.
+                Wspieram także osoby znajdujące się w trudnych sytuacjach
+                życiowych i takie, które chciałyby poprawić jakość swojego
+                życia.
               </Text>
               <Text>
                 W procesie terapeutycznym szczególną wagę przywiązuję do
@@ -141,15 +150,6 @@ const ARSection: React.FC = () => {
                 podnoszę swoje kwalifikacje zawodowe.
               </Text>
               <Text>
-                Prowadzę psychoterapię indywidualną osób dorosłych m.in. w
-                takich obszarach jak: zaburzenia lękowe, depresja, niska
-                samoocena i poczucie własnej wartości, zaburzenia osobowości,
-                trudności w relacjach interpersonalnych oraz emocjonalnych.
-                Wspieram także osoby znajdujące się w trudnych sytuacjach
-                życiowych i takie, które chciałyby poprawić jakość swojego
-                życia.
-              </Text>
-              <Text>
                 Wychodzę z założenia, że to Ty jesteś ekspertką/ekspertem od
                 swojego życia i doświadczenia. Byłabym zaszczycona, gdybym mogła
                 towarzyszyć Ci w podróży wiodącej zarówno do bliskiego{" "}
@@ -160,14 +160,14 @@ const ARSection: React.FC = () => {
                 <span className={classes.bold}>satysfakcjonującego życia</span>.
               </Text>
               <Text>
-                Doświadczenie: Na co dzień pracuję jako psycholog na Oddziale
-                Dziennym Psychiatrycznym SZPZLO Warszawa Praga- Północ, gdzie
-                prowadzę grupę terapeutyczną oraz zajęcia grupowe. Doświadczenie
-                zawodowe zdobyłam także pracując w modelu psychiatrii
-                środowiskowej w Ośrodku Wsparcia przy Stowarzyszeniu „Pomost” a
-                także w ramach telefonu wsparcia dla osób, które doświadczyły
-                straty bliskich osób Fundacji „Nagle Sami” oraz w gabinecie
-                prywatnym.
+                <span className={classes.bold}>Doświadczenie:</span> Na co dzień
+                pracuję jako psycholog na Oddziale Dziennym Psychiatrycznym
+                SZPZLO Warszawa Praga- Północ, gdzie prowadzę grupę
+                terapeutyczną oraz zajęcia grupowe. Doświadczenie zawodowe
+                zdobyłam także pracując w modelu psychiatrii środowiskowej w
+                Ośrodku Wsparcia przy Stowarzyszeniu „Pomost” a także w ramach
+                telefonu wsparcia dla osób, które doświadczyły straty bliskich
+                osób Fundacji „Nagle Sami” oraz w gabinecie prywatnym.
               </Text>
             </Box>
           </MediaQuery>
@@ -176,9 +176,9 @@ const ARSection: React.FC = () => {
       <div id="price">
         <InfoPanel
           name="Anna Ruszkiewicz"
-          phone={123456789}
-          priceFirst={120}
-          priceRegular={150}
+          phone={799705505}
+          price={160}
+          site="https://twojpsycholog.pl/profil-psychologa/anna-ruszkiewicz-2228"
         />
       </div>
     </Box>
