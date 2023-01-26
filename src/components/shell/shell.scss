@@ -1,6 +1,6 @@
 .cta {
   position: relative;
-  padding: 9px 18px;
+  padding: 9px 17px;
   transition: all .2s ease;
   cursor: pointer;
 
@@ -34,7 +34,7 @@
     transition: all .3s ease;
   }
 
-  &:hover {
+  &:hover, &:active  {
     &:before {
       width: 100%;
       background: linear-gradient(to right, #1f4037, #99f2c8);

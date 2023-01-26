@@ -12,9 +12,10 @@ import { MantineProvider } from "@mantine/core";
 import { ModalsProvider } from "@mantine/modals";
 import { NotificationsProvider } from "@mantine/notifications";
 import OJSection from "./components/Persons/OJSection/OJSection";
+import PriceContextProvider from "./components/context/PriceContext";
 import ScrollToTop from "./services/scrollService";
 import Shell from "./components/shell/Shell";
-import TherapistContextProvider from "./components/context/TheraphistContext";
+import TherapistContextProvider from "./components/context/TherapistContext";
 
 function App() {
   return (
@@ -27,33 +28,35 @@ function App() {
         <NotificationsProvider position="top-right" zIndex={2077} limit={5}>
           <Router>
             <ScrollToTop />
-            <Shell id="shell">
-              <TherapistContextProvider>
-                <Routes>
-                  <Route path="/" element={<Home />}></Route>
-                  <Route
-                    path="/anna_ruszkiewicz_psychoterapia"
-                    element={<ARSection />}
-                  />
-                  <Route
-                    path="/aleksandra_borowa_psychoterapia"
-                    element={<ABSection />}
-                  />
-                  <Route
-                    path="/adrianna_weremij_psychoterapia"
-                    element={<AWSection />}
-                  />
-                  <Route
-                    path="/olga_jendrzejewicz_psychoterapia"
-                    element={<OJSection />}
-                  />
-                  <Route path="/email" element={<EmailForm />} />
-                </Routes>
-              </TherapistContextProvider>
-              <div id="footer">
-                <Footer />
-              </div>
-            </Shell>
+            <PriceContextProvider>
+              <Shell id="shell">
+                <TherapistContextProvider>
+                  <Routes>
+                    <Route path="/" element={<Home />}></Route>
+                    <Route
+                      path="/anna_ruszkiewicz_psychoterapia"
+                      element={<ARSection />}
+                    />
+                    <Route
+                      path="/aleksandra_borowa_psychoterapia"
+                      element={<ABSection />}
+                    />
+                    <Route
+                      path="/Adriana_weremij_psychoterapia"
+                      element={<AWSection />}
+                    />
+                    <Route
+                      path="/olga_jendrzejewicz_psychoterapia"
+                      element={<OJSection />}
+                    />
+                    <Route path="/email" element={<EmailForm />} />
+                  </Routes>
+                </TherapistContextProvider>
+                <div id="footer">
+                  <Footer />
+                </div>
+              </Shell>
+            </PriceContextProvider>
           </Router>
         </NotificationsProvider>
       </ModalsProvider>

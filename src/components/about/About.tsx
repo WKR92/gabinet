@@ -51,6 +51,9 @@ const useStyles = createStyles(() => ({
   bold: {
     fontWeight: "bold",
   },
+  fontSize: {
+    fontSize: "18px",
+  },
 }));
 
 const Slider: React.FC = () => {
@@ -89,15 +92,14 @@ const Slider: React.FC = () => {
               styles={{ padding: "1rem", maxHeight: "fit-content" }}
             >
               <Box className={classes.textContainer}>
-                <h3 className={classes.title}>O nas:</h3>
-                <Text>
+                <Text className={classes.fontSize}>
                   Jesteśmy zespołem terapeutycznym, którego celem jest tworzenie
                   bezpiecznej przestrzeni do odkrywania siebie i przeżywania
                   emocji, a także do zmiany i rozwoju. Pracujemy w nurcie
                   poznawczo - behawioralnym, integrujemy w swojej pracy
                   podejścia z trzeciej fali (ACT i DBT) oraz terapię schematu.
                 </Text>
-                <Text>
+                <Text className={classes.fontSize}>
                   Dbamy o profesjonalizm usług kształcąc się w szkołach
                   posiadających rekomendację Polskiego Towarzystwa Terapii
                   Poznawczej i Behawioralnej. Jesteśmy zrzeszone w towarzystwie
@@ -107,7 +109,7 @@ const Slider: React.FC = () => {
                   nas pasja do wykonywanego zawodu, dlatego nieustannie
                   poszerzamy wiedzę na szkoleniach i konferencjach.
                 </Text>
-                <Text>
+                <Text className={classes.fontSize}>
                   Pracujemy stacjonarnie w gabinecie na warszawskim Powiślu oraz
                   online.
                 </Text>

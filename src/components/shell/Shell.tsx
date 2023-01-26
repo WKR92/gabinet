@@ -22,6 +22,7 @@ import {
 import { ReactNode, useState } from "react";
 
 import { useNavigate } from "react-router-dom";
+import { useUpdatePriceContext } from "../context/PriceContext";
 
 const useStyles = createStyles((theme, _params, getRef) => ({
   mainContainer: {
@@ -152,6 +153,7 @@ const Shell: React.FC<IProps> = ({ children }) => {
   const [opened, setOpened] = useState(false);
   const { classes } = useStyles();
   const navigate = useNavigate();
+  const updatePriceContext = useUpdatePriceContext();
 
   const scroll = (id: string) => {
     const section = document.querySelector(`#${id}`) as HTMLElement;
@@ -175,6 +177,8 @@ const Shell: React.FC<IProps> = ({ children }) => {
         scroll(section ? section : "");
       }, 100);
     }
+
+    if (section === "price") updatePriceContext(true);
   };
 
   return (
@@ -260,10 +264,10 @@ const Shell: React.FC<IProps> = ({ children }) => {
                   <Menu.Item
                     className={classes.burgerMenuItem}
                     onClick={() =>
-                      changePath("/adrianna_weremij_psychoterapia", "price")
+                      changePath("/Adriana_weremij_psychoterapia", "price")
                     }
                   >
-                    Adrianna Weremij
+                    Adriana Weremij
                   </Menu.Item>
                   <Menu.Item
                     className={classes.burgerMenuItem}
@@ -329,11 +333,11 @@ const Shell: React.FC<IProps> = ({ children }) => {
             <MediaQuery query="(max-width: 440px)" styles={{ display: "none" }}>
               <Group className={classes.headerMainContainer}>
                 <MediaQuery
-                  query="(max-width: 625px)"
+                  query="(max-width: 700px)"
                   styles={{ display: "none" }}
                 >
                   <div className="cta" onClick={() => changePath("/email")}>
-                    <span>terapiadobra@gmail.com</span>
+                    <span>psychoterapianadobrej@gmail.com</span>
                     <svg width="13px" height="10px" viewBox="0 0 13 10">
                       <path d="M1,5 L11,5"></path>
                       <polyline points="8 1 12 5 8 9"></polyline>
@@ -341,12 +345,12 @@ const Shell: React.FC<IProps> = ({ children }) => {
                   </div>
                 </MediaQuery>
                 <MediaQuery
-                  query="(min-width: 625px)"
+                  query="(min-width: 700px)"
                   styles={{ marginLeft: "auto" }}
                 >
                   <Group>
                     <MediaQuery
-                      query="(min-width: 625px)"
+                      query="(min-width: 700px)"
                       styles={{ display: "none" }}
                     >
                       <Group
@@ -404,12 +408,12 @@ const Shell: React.FC<IProps> = ({ children }) => {
                           <Menu.Item
                             onClick={() =>
                               changePath(
-                                "/adrianna_weremij_psychoterapia",
+                                "/Adriana_weremij_psychoterapia",
                                 "price"
                               )
                             }
                           >
-                            Adrianna Weremij
+                            Adriana Weremij
                           </Menu.Item>
                           <Menu.Item
                             onClick={() =>

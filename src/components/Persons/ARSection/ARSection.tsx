@@ -138,7 +138,7 @@ const ARSection: React.FC = () => {
                 Ważne jest też dla mnie{" "}
                 <span className={classes.bold}>indywidualne podejście</span> do
                 każdej z Osób oraz szacunek dla tempa pracy, którego potrzebuje.
-                Stosuję metody oparte na
+                Stosuję metody oparte na{" "}
                 <span className={classes.bold}>dowodach naukowych</span>. W
                 swojej pracy integruję podejścia terapii
                 poznawczo-behawioralnej, a także nurtów trzeciej fali.

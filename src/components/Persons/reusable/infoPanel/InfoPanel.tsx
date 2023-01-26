@@ -1,11 +1,15 @@
 import "./infoPanel.scss";
 
 import { Box, MediaQuery, Text, createStyles } from "@mantine/core";
-import { IconBusinessplan, IconMailOpened, IconPhoneCall } from "@tabler/icons";
+import { IconBusinessplan, IconPhoneCall } from "@tabler/icons";
+import { useEffect, useState } from "react";
+import {
+  usePriceContext,
+  useUpdatePriceContext,
+} from "../../../context/PriceContext";
 
-import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import { useUpdateTherapistContext } from "../../../context/TheraphistContext";
+import { useUpdateTherapistContext } from "../../../context/TherapistContext";
 
 const useStyles = createStyles(() => ({
   mainContainer: {
@@ -43,6 +47,19 @@ const InfoPanel: React.FC<IInfoPanel> = ({ name, phone, price, site }) => {
   const { classes } = useStyles();
   const navigate = useNavigate();
   const updateTherapistContext = useUpdateTherapistContext();
+  const updatePriceContext = useUpdatePriceContext();
+  const priceContext = usePriceContext();
+  const [animClass, setAnimClass] = useState("");
+
+  useEffect(() => {
+    if (priceContext) {
+      setAnimClass("highlightPrice");
+    }
+
+    return () => {
+      updatePriceContext(false);
+    };
+  }, [priceContext]);
 
   const changePath = (path: string) => {
     navigate(path);
@@ -70,7 +87,7 @@ const InfoPanel: React.FC<IInfoPanel> = ({ name, phone, price, site }) => {
           <IconPhoneCall size={20} stroke={2} />
           <Text>{phone}</Text>
         </Box>
-        <Box className={classes.sectorContainer}>
+        <Box className={`${classes.sectorContainer} ${animClass}`}>
           <IconBusinessplan size={20} stroke={2} />
           <Text>
             Koszt wizyty: <span className={classes.bold}>{price}</span> zł

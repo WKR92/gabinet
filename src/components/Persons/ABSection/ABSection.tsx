@@ -117,13 +117,13 @@ const ARSection: React.FC = () => {
                 Absolwentką psychologii na Uniwersytecie Warszawskim. Szkolenie
                 psychoterapeutyczne odbywam w szkole terapii
                 poznawczo-behawioralnej „Crescentia” rekomendowanej przez
-                Polskie Towarzystwo Terapii Poznawczej i Behawioralnej.
+                Polskie Towarzystwo Terapii Poznawczej i Behawioralnej. Jestem w
+                trakcie rocznego szkolenia z Terapii Schematów w Centrum
+                Psychoterapii i Poradnictwa „Phanari”.
               </Text>
               <Text>
                 Na co dzień pracuję na Oddziale Dziennym Psychiatrycznym SZPZLO
-                Warszawa Praga-Północ. Jestem w trakcie rocznego szkolenia z
-                Terapii Schematów w Centrum Psychoterapii i Poradnictwa
-                „Phanari”.
+                Warszawa Praga-Północ.
               </Text>
               <Text>
                 Pomagam osobom w odkrywaniu i poszerzaniu świadomości
@@ -136,7 +136,7 @@ const ARSection: React.FC = () => {
               </Text>
               <Text>
                 W terapii najważniejsze jest dla mnie zbudowanie relacji opartej
-                na poczuciu bezpieczeństwa i akceptacji. Stosuję metody oparte
+                na poczuciu <span className={classes.bold}>bezpieczeństwa i akceptacji</span>. Stosuję metody oparte
                 na dowodach naukowych, a swoją pracę poddaję regularnej
                 superwizji.
               </Text>
@@ -149,7 +149,9 @@ const ARSection: React.FC = () => {
           name="Aleksandra Borowa"
           phone={889744238}
           price={160}
-          site={'https://twojpsycholog.pl/profil-psychologa/aleksandra-borowa-2374'}
+          site={
+            "https://twojpsycholog.pl/profil-psychologa/aleksandra-borowa-2374"
+          }
         />
       </div>
     </Box>

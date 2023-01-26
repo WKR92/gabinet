@@ -1,7 +1,6 @@
 import { Box, createStyles } from "@mantine/core";
 
 import About from "../about/About";
-import { Link } from "react-scroll";
 import Portrait from "../portait/Portrait";
 import Slider from "../slider/Slider";
 import Welcome from "../welcome/Welcome";
@@ -26,9 +25,9 @@ const Home: React.FC = () => {
       <About />
       <Slider>
         <Portrait
-          name="Adrianna Weremij"
+          name="Adriana Weremij"
           img={adaImg}
-          path="/adrianna_weremij_psychoterapia"
+          path="/Adriana_weremij_psychoterapia"
         />
         <Portrait
           name="Olga Jędrzejewicz"

@@ -25,13 +25,13 @@ import { forwardRef, useEffect } from "react";
 import {
   useTherapistContext,
   useUpdateTherapistContext,
-} from "../context/TheraphistContext";
+} from "../context/TherapistContext";
 
 import ada_w_small from "../../assets/ada_crircle_2.jpg";
 import anna_small from "../../assets/ania_circle_2.jpg";
 import axios from "axios";
 import chair from "../../assets/chair.png";
-import green_bg from "../../assets/green_bg.jpg";
+import green_bg from "../../assets/plant.jpg";
 import ola_b_small from "../../assets/ola_b_small_2.jpg";
 import olga_j_small from "../../assets/olga_circle_2.jpg";
 import { showNotification } from "@mantine/notifications";
@@ -61,6 +61,7 @@ const useStyles = createStyles(() => ({
     width: "100%",
     margin: "0 0 1rem 0",
     textAlign: "center",
+    color: "white",
   },
   select: {
     fontWeight: "bold",
@@ -110,7 +111,7 @@ const EmailForm: React.FC = () => {
       subject: "",
       phone: "",
       email: "",
-      emailRepeat: '',
+      emailRepeat: "",
       text: "",
       therapist: therapistContext ? therapistContext : "Ogólnie do gabinetu",
     },
@@ -119,8 +120,14 @@ const EmailForm: React.FC = () => {
       name: (value) =>
         value.length < 5 ? "Proszę podać pełne imię i nazwisko" : null,
       subject: (value) => (value.length < 5 ? "Proszę podać temat" : null),
-      email: (value) => (/^\S+@\S+$/.test(value) ? null : "Niepoprawny email"),
-      emailRepeat: (value) => (value === form.values.email ? null : 'Niezgodność emaili'),
+      email: (value) =>
+        value === ""
+          ? "Proszę podać email"
+          : /^\S+@\S+$/.test(value)
+          ? null
+          : "Niepoprawny email",
+      emailRepeat: (value) =>
+        value === form.values.email ? null : "Niezgodność emaili",
       phone: (value) =>
         value.length > 0 && value.length !== 9
           ? "Numer musi mieć 9 cyfr"
@@ -197,19 +204,39 @@ const EmailForm: React.FC = () => {
             })}
             className={classes.formContainer}
           >
-            <Input.Wrapper label="Imię i nazwisko" error={form.errors.name}>
+            <Input.Wrapper
+              label="Imię i nazwisko"
+              error={form.errors.name}
+              styles={{ label: { color: "white" } }}
+            >
               <Input required {...form.getInputProps("name")} />
             </Input.Wrapper>
-            <Input.Wrapper label="Temat" error={form.errors.subject}>
+            <Input.Wrapper
+              label="Temat"
+              error={form.errors.subject}
+              styles={{ label: { color: "white" } }}
+            >
               <Input required {...form.getInputProps("subject")} />
             </Input.Wrapper>
-            <Input.Wrapper label="Twój email" error={form.errors.email}>
+            <Input.Wrapper
+              label="Twój email"
+              error={form.errors.email}
+              styles={{ label: { color: "white" } }}
+            >
               <Input required {...form.getInputProps("email")} />
             </Input.Wrapper>
-            <Input.Wrapper label="Powtórz email" error={form.errors.emailRepeat}>
+            <Input.Wrapper
+              label="Powtórz email"
+              error={form.errors.emailRepeat}
+              styles={{ label: { color: "white" } }}
+            >
               <Input required {...form.getInputProps("emailRepeat")} />
             </Input.Wrapper>
-            <Input.Wrapper label="Telefon komórkowy" error={form.errors.phone}>
+            <Input.Wrapper
+              label="Telefon komórkowy"
+              error={form.errors.phone}
+              styles={{ label: { color: "white" } }}
+            >
               <Input
                 {...form.getInputProps("phone")}
                 placeholder="Opcjonalne..."
@@ -217,6 +244,7 @@ const EmailForm: React.FC = () => {
               />
             </Input.Wrapper>
             <Select
+              styles={{ label: { color: "white" } }}
               maxDropdownHeight={300}
               required
               label="Terapeuta"
@@ -229,8 +257,8 @@ const EmailForm: React.FC = () => {
                 },
                 {
                   image: ada_w_small,
-                  value: "Adrianna Weremij",
-                  label: "Adrianna Weremij",
+                  value: "Adriana Weremij",
+                  label: "Adriana Weremij",
                 },
                 {
                   image: olga_j_small,
@@ -244,7 +272,7 @@ const EmailForm: React.FC = () => {
                 },
                 {
                   image: ola_b_small,
-                  value: "Aleksandra  Borowa",
+                  value: "Aleksandra Borowa",
                   label: "Aleksandra Borowa",
                 },
               ]}
@@ -252,6 +280,7 @@ const EmailForm: React.FC = () => {
               itemComponent={SelectItem}
             />
             <Textarea
+              styles={{ label: { color: "white" } }}
               placeholder="Twoja wiadomość"
               label="Twoja wiadomość"
               {...form.getInputProps("text")}

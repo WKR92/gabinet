@@ -1,6 +1,6 @@
 .cta {
   position: relative;
-  padding: 9px 18px;
+  padding: 9px 17px;
   transition: all .2s ease;
   cursor: pointer;
 }
@@ -35,12 +35,12 @@
   transition: all .3s ease;
 }
 
-.cta:hover:before {
+.cta:hover:before, .cta:active:before {
   width: 100%;
   background: linear-gradient(to right, #1f4037, #99f2c8);
 }
 
-.cta:hover svg {
+.cta:hover svg, .cta:active svg {
   transform: translateX(0);
 }
 

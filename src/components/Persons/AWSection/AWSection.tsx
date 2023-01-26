@@ -80,7 +80,7 @@ const ARSection: React.FC = () => {
               <img
                 src={ada_w_big}
                 className={classes.image}
-                alt="adrianna_weremij_psychoterapia"
+                alt="Adriana_weremij_psychoterapia"
               />
             </Box>
           </MediaQuery>
@@ -92,7 +92,7 @@ const ARSection: React.FC = () => {
               <img
                 src={ada_w_small}
                 className={classes.circleImage}
-                alt="adrianna_weremij_psychoterapia"
+                alt="Adriana_weremij_psychoterapia"
               />
             </Box>
           </MediaQuery>
@@ -158,10 +158,10 @@ const ARSection: React.FC = () => {
       </MediaQuery>
       <div id="price">
         <InfoPanel
-          name="Adrianna Weremij"
+          name="Adriana Weremij"
           phone={509449735}
-          price={180}
-          site='https://twojpsycholog.pl/profil-psychologa/adriana-weremij-522'
+          price={200}
+          site="https://twojpsycholog.pl/profil-psychologa/adriana-weremij-522"
         />
       </div>
     </Box>

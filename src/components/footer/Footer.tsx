@@ -63,11 +63,11 @@ const Footer: React.FC = () => {
 
   return (
     <MediaQuery
-      query="(max-width: 470px)"
+      query="(max-width: 590px)"
       styles={{ flexDirection: "column", gap: "2rem" }}
     >
       <Box className={classes.mainContainer}>
-        <MediaQuery query="(max-width: 470px)" styles={{ margin: "auto" }}>
+        <MediaQuery query="(max-width: 590px)" styles={{ margin: "auto" }}>
           <Box
             onClick={() => setOpened(true)}
             className={classes.sectorContainer}
@@ -81,7 +81,7 @@ const Footer: React.FC = () => {
             <Text>00-388 Warszawa</Text>
           </Box>
         </MediaQuery>
-        <MediaQuery query="(max-width: 470px)" styles={{ margin: "auto" }}>
+        <MediaQuery query="(max-width: 590px)" styles={{ margin: "auto" }}>
           <Box
             onClick={() => changePath("/email")}
             className={classes.sectorContainer}
@@ -89,7 +89,7 @@ const Footer: React.FC = () => {
             <Box className={classes.iconContainer}>
               <IconMailOpened size={20} stroke={2} className={classes.icon} />
             </Box>
-            <Text className={classes.pointer}>terapiadobra@gmail.com</Text>
+            <Text className={classes.pointer}>psychoterapianadobrej@gmail.com</Text>
           </Box>
         </MediaQuery>
 

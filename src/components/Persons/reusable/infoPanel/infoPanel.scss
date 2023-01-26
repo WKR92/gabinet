@@ -34,7 +34,7 @@
     transition: all .3s ease;
   }
 
-  &:hover {
+  &:hover, &:active {
     &:before {
       width: 100%;
       background: linear-gradient(to right, #FFAB9D, #ff644b);
@@ -90,7 +90,7 @@ a {
       transition: all .3s ease;
     }
 
-    &:hover {
+    &:hover, &:active, &:focus {
       &:before {
         width: 100%;
         background: linear-gradient(to right, #F9D976, #F39F86);
@@ -105,4 +105,16 @@ a {
       transform: scale(.96);
     }
   }
+}
+
+.highlightPrice {
+  animation-name: example;
+  animation-duration: 5s;
+  animation-delay: .5s;
+}
+
+@keyframes example {
+  0% {transform: scale(1)}
+  50% {color: #a8123a; transform: scale(1.1)}
+  100% {transform: scale(1)}
 }

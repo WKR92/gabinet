@@ -35,12 +35,12 @@
   transition: all .3s ease;
 }
 
-.anim1:hover:before {
+.anim1:hover:before, .anim1:active:before {
   width: 100%;
   background: linear-gradient(to right, #FFAB9D, #ff644b);
 }
 
-.anim1:hover svg {
+.anim1:hover svg, .anim1:active svg {
   transform: translateX(0);
 }
 
@@ -90,15 +90,34 @@ a .anim2 svg {
   transition: all .3s ease;
 }
 
-a .anim2:hover:before {
+a .anim2:hover:before, a .anim2:active:before, a .anim2:focus:before {
   width: 100%;
   background: linear-gradient(to right, #F9D976, #F39F86);
 }
 
-a .anim2:hover svg {
+a .anim2:hover svg, a .anim2:active svg, a .anim2:focus svg {
   transform: translateX(0);
 }
 
 a .anim2:active {
   transform: scale(0.96);
+}
+
+.highlightPrice {
+  animation-name: example;
+  animation-duration: 5s;
+  animation-delay: .5s;
+}
+
+@keyframes example {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    color: #a8123a;
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
