@@ -3,7 +3,8 @@ import { useEffect, useState } from "react";
 
 import React from "react";
 import homeImg from "../../assets/home.jpg";
-import homeImgMobile from "../../assets/mobileHome.jpg"
+import homeImgMobile from "../../assets/mobileHome.jpg";
+import homeImgMobileExtraSmall from "../../assets//homeImgSuperSmall.jpg";
 
 const useStyles = createStyles(() => ({
   welcomeContainer: {
@@ -16,17 +17,25 @@ const useStyles = createStyles(() => ({
 
 const Welcome: React.FC = () => {
   const { classes } = useStyles();
-  const hasWindow = typeof window !== 'undefined';
-  const [image, setImage] = useState(homeImg);
+  const hasWindow = typeof window !== "undefined";
+  const initialImg =
+    window.innerWidth <= 1200
+      ? homeImgMobileExtraSmall
+      : window.innerWidth <= 1750 && window.innerWidth >= 1201
+      ? homeImgMobile
+      : homeImg;
+  const [image, setImage] = useState(initialImg);
 
   useEffect(() => {
     function handleResize() {
-      if (window.innerWidth <= 899) setImage(homeImgMobile);
-      if (window.innerWidth >= 900) setImage(homeImg);
+      if (window.innerWidth <= 1200) setImage(homeImgMobileExtraSmall);
+      if (window.innerWidth <= 1750 && window.innerWidth >= 1201)
+        setImage(homeImgMobile);
+      if (window.innerWidth >= 1751) setImage(homeImg);
     }
 
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, [hasWindow]);
 
   return (

@@ -1,6 +1,7 @@
 import { Box, createStyles } from "@mantine/core";
 
 import About from "../about/About";
+import PicturesShow from "../picturesShow/PicturesShow";
 import Portrait from "../portait/Portrait";
 import Slider from "../slider/Slider";
 import Welcome from "../welcome/Welcome";
@@ -45,6 +46,7 @@ const Home: React.FC = () => {
           path="/aleksandra_borowa_psychoterapia"
         />
       </Slider>
+      <PicturesShow />
     </Box>
   );
 };

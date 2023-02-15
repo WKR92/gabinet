@@ -95,7 +95,7 @@ const InfoPanel: React.FC<IInfoPanel> = ({ name, phone, price, site }) => {
         </Box>
         <a href={site} target="_blank">
           <Box className="anim2">
-            <span>Portal Twój Psycholog</span>
+            <span>Sprawdź dostępne terminy</span>
             <svg width="13px" height="10px" viewBox="0 0 13 10">
               <path d="M1,5 L11,5"></path>
               <polyline points="8 1 12 5 8 9"></polyline>
