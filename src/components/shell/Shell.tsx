@@ -27,6 +27,7 @@ import { useUpdatePriceContext } from "../context/PriceContext";
 const useStyles = createStyles((theme, _params, getRef) => ({
   mainContainer: {
     padding: "0px",
+    maxWidth: "100vw",
   },
   headerGroup: {
     gap: "7px",
@@ -49,6 +50,7 @@ const useStyles = createStyles((theme, _params, getRef) => ({
   nav: {
     maxHeight: "fit-content",
     gap: ".5rem",
+    maxWidth: "100vw",
   },
 
   phoneHeaderGroup: {

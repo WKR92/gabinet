@@ -12,7 +12,6 @@ import gabinet6 from "../../assets/gabinetx6.jpg";
 
 const useStyles = createStyles(() => ({
   mainContainer: {
-    width: "100vw",
     maxHeight: "calc(100vh - 50px)",
     display: "flex",
     alignItems: "center",
@@ -23,6 +22,7 @@ const useStyles = createStyles(() => ({
     width: "100%",
     maxHeight: "calc(100vh - 50px)",
     padding: "1rem 0",
+    maxWidth: '100vw',
   },
   img: {
     backgroundSize: "cover",
@@ -96,7 +96,7 @@ const PicturesShow: React.FC = () => {
           sx={{ maxWidth: "95vw" }}
           mx={"auto"}
           withIndicators
-          slideSize={w < 700 ? "100%" : "70%"}
+          slideSize={w < 700 ? "99%" : "70%"}
           height={h}
           slideGap="lg"
           loop

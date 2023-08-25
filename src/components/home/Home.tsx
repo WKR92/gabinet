@@ -14,6 +14,7 @@ const useStyles = createStyles(() => ({
   homeContainer: {
     display: "flex",
     flexDirection: "column",
+    maxWidth: "100vw",
   },
 }));
 
@@ -26,14 +27,9 @@ const Home: React.FC = () => {
       <About />
       <Slider>
         <Portrait
-          name="Adriana Weremij"
-          img={adaImg}
-          path="/Adriana_weremij_psychoterapia"
-        />
-        <Portrait
-          name="Olga Jędrzejewicz"
-          img={olgaImg}
-          path="/olga_jendrzejewicz_psychoterapia"
+          name="Aleksandra Borowa"
+          img={olaImg}
+          path="/aleksandra_borowa_psychoterapia"
         />
         <Portrait
           name="Anna Ruszkiewicz"
@@ -41,9 +37,14 @@ const Home: React.FC = () => {
           path="/anna_ruszkiewicz_psychoterapia"
         />
         <Portrait
-          name="Aleksandra Borowa"
-          img={olaImg}
-          path="/aleksandra_borowa_psychoterapia"
+          name="Olga Jędrzejewicz"
+          img={olgaImg}
+          path="/olga_jendrzejewicz_psychoterapia"
+        />
+        <Portrait
+          name="Adriana Weremij"
+          img={adaImg}
+          path="/Adriana_weremij_psychoterapia"
         />
       </Slider>
       <PicturesShow />

@@ -148,7 +148,7 @@ const ARSection: React.FC = () => {
         <InfoPanel
           name="Aleksandra Borowa"
           phone={889744238}
-          price={160}
+          price={180}
           site={
             "https://twojpsycholog.pl/profil-psychologa/aleksandra-borowa-2374"
           }
